@@ -6,19 +6,25 @@
 //$db_pass = '';
 
 /* Connect to an ODBC database using driver invocation */
-$dsn = 'mysql:dbname=acsmdb;host=127.0.0.1';
-$user = 'root';
-$password = '';
+$db_host = 'localhost';
+$db_name = 'acsmdb';
+$db_user = 'root';
+$db_pass = 'acsm';
 
 try {
-    $dbh = new PDO($dsn, $user, $password);
-    echo 'Connection to Database';
-} catch (PDOException $e) {
-    echo 'Connection failed: ' . $e->getMessage();
+    // If you change db server system, change this too!
+
+    $conn=mysql_connect($db_host,$db_user,$db_pass) or die("ไม่สามารถเชื่อมต่อฐานข้อมูลได้"); // เชื่อมต่อ ฐานข้อมูล
+    mysql_select_db($db_name,$conn); // เลือกฐานข้อมูล
+    mysql_query("SET NAMES utf8"); // กำหนด charset ให้ฐานข้อมูล เพื่ออ่านภาษาไทย
+    echo "Connected to database";
+}
+catch (PDOException $e) {
+    echo $e->getMessage();
 }
 
 
-/*
+
 
 	//$_POST["strUser"] = "weerachai"; // for Sample
 	//$_POST["strUser"] = "weerachai@1";  // for Sample
@@ -53,7 +59,7 @@ try {
 		$arr['Error' // Error Message
 	*/
 	
-	mysql_close($dsn);
+	mysql_close($conn);
 
 	
 	//echo json_encode($arr);

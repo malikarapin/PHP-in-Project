@@ -10,7 +10,8 @@ try {
     $conn=mysql_connect($db_host,$db_user,$db_pass) or die("äÁèÊÒÁÒÃ¶àª×èÍÁµèÍ°Ò¹¢éÍÁÙÅä´é"); // àª×èÍÁµèÍ °Ò¹¢éÍÁÙÅ
     mysql_select_db($db_name,$conn); // àÅ×Í¡°Ò¹¢éÍÁÙÅ
     mysql_query("SET NAMES utf8"); // ¡ÓË¹´ charset ãËé°Ò¹¢éÍÁÙÅ à¾×èÍÍèÒ¹ÀÒÉÒä·Â
-    echo "Connected to database";
+    //echo "Connected to database";
+    mysql_close($conn);
 }
 catch (PDOException $e) {
     echo $e->getMessage();

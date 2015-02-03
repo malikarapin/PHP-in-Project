@@ -1,32 +1,40 @@
 <?php
+$db_host = 'acsm.ictte-project.com';
+$db_name = 'project3_acsm';
+$db_user = 'project3_acsm';
+$db_pass = '1ASdb7rv';
 
-	$objConnect = mysql_connect("localhost","root","acsm");
-	$objDB = mysql_select_db("acsmdb");
 
+$objConnect=mysql_connect($db_hos,$db_user,$db_pass)or die(mysql_error());
+	//$objConnect = mysql_connect("http://acsm.ictte-project.com","project3_acsm","1ASdb7rv");
+	
+$objDB = mysql_select_db("project3_acsm")or die(mysql_error());
+
+	//$objDB = mysql_select_db("project3_acsm");
+	//echo "Connected to database";
 	//$_POST["strUser"] = "weerachai"; // for Sample
 	//$_POST["strUser"] = "weerachai@1";  // for Sample
 
-	$strUsername = $_POST["strUser"];
-	$strPassword = $_POST["strPass"];
-	$strSQL = "SELECT * FROM student WHERE 1 
-		AND std_id = '".$strUsername."'  
-		AND std_pwd = '".$strPassword."'  
-		";
+	$strUsername = $_POST["std_id"];
+	$strPassword = $_POST["std_pwd"];
 
-	$objQuery = mysql_query($strSQL);
-	$objResult = mysql_fetch_array($objQuery);
-	$intNumRows = mysql_num_rows($objQuery);
+	$strSQL= mysql_query("SELECT * FROM student WHERE std_id = '".$strUsername."' AND std_pwd = '".$strPassword. "'")or die(mysql_error());
+	//$strSQL = "select * from student where std_id = '".$username."' AND std_pwd = '".$password. "'";
+
+	//$objQuery = mysql_query($strSQL);
+	$objResult = mysql_fetch_array($strSQL);
+	$intNumRows = mysql_num_rows($strSQL);
 	if($intNumRows==0)
 	{
-		$arr['StatusID'] = "0"; 
-		$arr['MemberID'] = "0"; 
+		$arr['std_id'] = "0"; 
+		$arr['std_pwd'] = "0"; 
 		$arr['Error'] = "Incorrect Username and Password";	
 	}
 	else
 	{
-		$arr['StatusID'] = "1"; 
-		$arr['MemberID'] = $objResult["MemberID"]; 
-		$arr['Error'] = "";	
+		$arr['std_id'] = "1"; 
+		$arr['std_pwd'] = $objResult["MemberID"]; 
+		$arr['Connect'] = "Connect OK";	
 	}
 
 	/**
@@ -34,8 +42,9 @@
 		$arr['MemberID'] // MemberID
 		$arr['Error' // Error Message
 	*/
-	
+
 	mysql_close($objConnect);
 	
 	echo json_encode($arr);
+
 ?>

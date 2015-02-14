@@ -43,7 +43,7 @@ $objDB = mysql_select_db("project3_acsm")or die(mysql_error());
 		$arr['Error' // Error Message
 	*/
 
-	mysql_close($objConnect);
+	//mysql_close($objConnect);
 	
 	echo json_encode($arr);
 

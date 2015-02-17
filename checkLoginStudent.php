@@ -6,8 +6,8 @@ $db_pass = '1ASdb7rv';
 
 
 $objConnect=mysql_connect($db_hos,$db_user,$db_pass)or die(mysql_error());
-	//$objConnect = mysql_connect("http://acsm.ictte-project.com","project3_acsm","1ASdb7rv");
-	
+//$objConnect = mysql_connect("http://acsm.ictte-project.com","project3_acsm","1ASdb7rv");
+
 $objDB = mysql_select_db("project3_acsm")or die(mysql_error());
 
 	//$objDB = mysql_select_db("project3_acsm");
@@ -19,7 +19,7 @@ $objDB = mysql_select_db("project3_acsm")or die(mysql_error());
 	$strPassword = $_POST["std_pwd"];
 
 	$strSQL= mysql_query("SELECT * FROM student WHERE std_id = '".$strUsername."' AND std_pwd = '".$strPassword. "'")or die(mysql_error());
-	//$strSQL = "select * from student where std_id = '".$username."' AND std_pwd = '".$password. "'";
+	
 
 	//$objQuery = mysql_query($strSQL);
 	$objResult = mysql_fetch_array($strSQL);

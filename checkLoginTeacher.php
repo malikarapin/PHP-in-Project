@@ -15,10 +15,10 @@ $objDB = mysql_select_db("project3_acsm")or die(mysql_error());
 	//$_POST["strUser"] = "weerachai"; // for Sample
 	//$_POST["strUser"] = "weerachai@1";  // for Sample
 
-	$strUsername = $_POST["teacher_id"];
-	$strPassword = $_POST["teacher_pwd"];
+	$lat = $_POST["latitude"];
+	$lon = $_POST["longitude"];
 
-	$strSQL= mysql_query("SELECT * FROM teacher WHERE teacher_id = '".$strUsername."' AND teacher_pwd = '".$strPassword. "'")or die(mysql_error());
+	$strSQL= mysql_query("SELECT * FROM teacher WHERE teacher_id = '".$lat."' AND teacher_pwd = '".$lon. "'")or die(mysql_error());
 	//$strSQL = "select * from student where std_id = '".$username."' AND std_pwd = '".$password. "'";
 
 	//$objQuery = mysql_query($strSQL);

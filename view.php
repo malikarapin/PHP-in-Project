@@ -1,17 +1,12 @@
 <?php
 
 
-$db_host = 'acsm.ictte-project.com';
-$db_name = 'project3_acsm';
-$db_user = 'project3_acsm';
-$db_pass = '1ASdb7rv';
+require("config.php");
 
 
-$conn=mysql_connect($db_hos,$db_user,$db_pass)or die(mysql_error());
 
-mysql_select_db("project3_acsm")or die(mysql_error());
 mysql_query("SET NAMES UTF8");
-$result = mysql_query("SELECT * FROM subject")or die(mysql_error());
+$result = mysql_query("SELECT * FROM regist_data")or die(mysql_error());
 
 
 if (mysql_num_rows($result) > 0) {

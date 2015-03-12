@@ -13,5 +13,5 @@ $passcode = $_POST["passcode"];
 	$strSQL = mysql_query ("INSERT INTO `check` (Teacher_Id,Latitude,longitude,Date_Time,Subject_Name_Eng,Pass_Code)
 	VALUES('$teacher_Id','$Latitude','$longitude','$datetime','$subject','$passcode')")or die(mysql_error());
 
-echo $teacher_Id,$Latitude,$longitude,$datetime;
+
 ?>

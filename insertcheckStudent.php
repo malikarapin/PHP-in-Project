@@ -8,12 +8,15 @@ $longitude = $_POST ["longitude"];
 $subject = $_POST ["subject"];
 $passcode = $_POST ["pass_code"];
 
-$strSQL = mysql_query ( "SELECT check.Pass_Code 
+$strSQL = mysql_query ( "SELECT check.Pass_Code
 		FROM `check` 
-		WHERE check.Subject_Name_Eng='$subject' 
+		WHERE check.Subject_Name_Eng='$subject'
 		ORDER BY `check`.Check_Id DESC ,
-		`check`.Subject_Name_Eng DESC
+		`check`.Teacher_Id DESC,
+		`check`.Subject_Name_Eng DESC 
 		 LIMIT 1" ) or die ( mysql_error () );
+
+//`check`.Subject_Name_Eng DESC,
 
 if ($value = mysql_num_rows ( $strSQL ) > 0) {
 	

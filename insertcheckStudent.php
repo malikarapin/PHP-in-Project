@@ -50,7 +50,7 @@ if ($value = mysql_num_rows ( $strSQL ) > 0) {
 			//echo $row['Subject_Name_Eng']." > ".$row['distance']."<BR>";
 			foreach ( $row as $valuelatloncheck ) {
 			}
-			echo $valuelatloncheck;
+			//echo $valuelatloncheck;
 		}
 		if ($value9 = $valuelatloncheck > 0) {
 			$strSQLinsertstudent = mysql_query ("INSERT INTO `check` (Student_Id,Latitude,longitude,Date_Time,Subject_Name_Eng,Pass_Code) VALUES('$student_Id','$Latitude','$longitude','$datetime','$subject','$passcode')")or die(mysql_error());

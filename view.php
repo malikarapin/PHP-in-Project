@@ -16,15 +16,7 @@ if (mysql_num_rows($result) > 0) {
  
 while($e=mysql_fetch_assoc($result)){
 	
-	/* $place_detail = array();
-	
-	$place_detail["id"]=$e["id"];
-	$place_detail["place_name"]=$e["place_name"];
-	$place_detail["address"]=$e["address"];
-	$place_detail["phone"]=$e["phone"];
-	$place_detail["latitude"]=$e["latitude"];
-	$place_detail["longitude"]=$e["longitude"]; */
-	
+
 	$output[]=$e;
 	
 	}

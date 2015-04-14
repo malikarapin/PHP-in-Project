@@ -6,7 +6,7 @@ $username = $_POST["student"];
 
 
 
-$strSQL = mysql_query("SELECT `check`.Date_Time,`check`.Student_Id FROM `check` WHERE `check`.Subject_Name_Eng='".$subject."' and `check`.Student_Id =".$username." ")or die(mysql_error());
+$strSQL = mysql_query("SELECT `check`.Date_Time,`check`.Student_Id FROM `check` WHERE `check`.Subject_Name_Eng='".$subject."' and `check`.Student_Id ='".$username."' ")or die(mysql_error());
 
 
 if ($value = mysql_num_rows ( $strSQL ) > 0) {

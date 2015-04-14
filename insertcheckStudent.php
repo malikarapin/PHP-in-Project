@@ -16,7 +16,7 @@ $strSQL = mysql_query ( "SELECT check.Pass_Code
 		`check`.Subject_Name_Eng DESC 
 		 LIMIT 1" ) or die ( mysql_error () );
 
-//`check`.Subject_Name_Eng DESC,
+
 
 if ($value = mysql_num_rows ( $strSQL ) > 0) {
 	

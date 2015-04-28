@@ -10,7 +10,7 @@ $timecheck = $_POST ["time_check"];
 
 $strSQL = "SELECT check.Student_Id,check.Date_Time FROM `check` WHERE check.Subject_Name_Eng='".$subject."' 
 		and check.Pass_Code='".$passcode."'
-		and Date_Time <= '".$timecheck."'
+		and Date_Time >= '".$timecheck."'
 		and check.Student_Id IS NOT NULL";
 
 

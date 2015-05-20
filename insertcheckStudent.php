@@ -30,6 +30,7 @@ if ($value = mysql_num_rows ( $strSQL ) > 0) {
 	if ($passcode == $value1) {
 		
 	
+		
 		$origLat = $Latitude;// 7.894736;//app
 		$origLon = $longitude;//98.352592;//app
 		$dist = 0.0155342798; // This is the maximum distance (in miles) away from $origLat, $origLon in which to search

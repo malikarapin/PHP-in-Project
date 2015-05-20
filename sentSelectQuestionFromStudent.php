@@ -12,7 +12,7 @@ $selectQuestionStudent = mysql_query("SELECT `question`.Proposition,
 		`question`.Result4 
 		FROM `question`
 		WHERE `question`.Subject_Name_Eng='".$selectSubject."'
-		
+		and `question`.Teacher_Id IS NOT NULL
 		
 		ORDER BY `question`.Question_Id DESC
 		LIMIT 1")or die(mysql_error());
